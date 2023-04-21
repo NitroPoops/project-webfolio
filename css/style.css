@@ -1,0 +1,165 @@
+/* good luck */
+
+@font-face {
+    font-family: "vcr-mono";
+    src: url("/media/VCR_OSD_MONO.ttf") format("truetype");
+}
+
+:root {
+    font-family: "vcr-mono", monospace;
+    background-color: lightgrey;
+    text-transform: uppercase;
+    font-size: clamp(24px, 4.6vw, 63px);
+    margin: 7% 9%;
+    scrollbar-width: thin;
+    scrollbar-color: #28272a transparent;
+    line-height: 1.4;
+    cursor: default;
+
+    --small-text-font-size: clamp(18px, 0.4em, 34px);
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #28272a;
+}
+::selection {
+    background-color: rgba(137, 0, 137, 0.34);
+    color: black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(85, 0, 85);
+    font-size: var(--small-text-font-size);
+    margin-bottom: 15%;
+    position: relative;
+}
+
+#surprise {
+    color: black;
+    font-size: clamp(1px, 0.9em, 34px);
+    border: 3px solid black;
+    padding: 1em;
+    border-radius: 3px;
+
+    --shadow-x-distance: 3px;
+    --shadow-y-distance: 2px;
+    text-shadow: var(--shadow-x-distance) var(--shadow-y-distance) 0
+            rgba(2, 183, 182, 0.5),
+        calc(var(--shadow-x-distance) * -1) calc(var(--shadow-y-distance) * -1)
+            0 rgba(183, 2, 2, 0.5);
+    box-shadow: var(--shadow-x-distance) var(--shadow-y-distance) 0
+            rgba(2, 183, 182, 0.5),
+        calc(var(--shadow-x-distance) * -1) calc(var(--shadow-y-distance) * -1)
+            0 rgba(183, 2, 2, 0.5);
+
+    opacity: 0;
+    transition: 0.25s all ease-in-out;
+}
+
+#surprise:hover {
+    opacity: 1;
+}
+
+
+#hov {
+    --c: rgba(137, 0, 137, 0.307);
+
+    background: linear-gradient(90deg, #fff 50%, var(--c) 0)
+            calc(100% - var(--_p, 0%)) / 200% 100%,
+        linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) 100% no-repeat;
+    -webkit-background-clip: text, padding-box;
+    background-clip: text, padding-box;
+    transition: 0.4s;
+}
+
+#hov:hover {
+    cursor: default;
+    border-radius: 3px;
+    padding: 0.2em;
+    --_p: 100%;
+}
+
+
+#unclickable {
+    color: rgba(100, 0, 100, 0.6);
+}
+
+
+a {
+    text-decoration: none;
+    color: rgb(85, 0, 85);
+}
+
+p {
+    color: rgb(49, 0, 49);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20%;
+    font-size: var(--small-text-font-size);
+    position: relative;
+}
+
+ul {
+    list-style: none;
+}
+
+
+#theme-changer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#surprise-page {
+    margin: auto;
+}
+
+
+#poem {
+    background-color: rgb(241, 241, 241);
+    padding: 1px;
+    border-radius: 0.3rem;
+    font-size: clamp(12px, 0.4em, 34px);
+    text-transform: none;
+    font-family: sans;
+}
+
+#poem p {
+    padding: 3%;
+}
+
+
+#project-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 3.4rem;
+    text-align: center;
+}
+
+#project-list a {
+    font-size: clamp(24px, 4.6vw, 63px);
+}
+
+#project-list small {
+    text-transform: lowercase;
+    display: block;
+    color: rgba(107, 0, 107, 0.6);
+    font-size: clamp(16px, 1.8vw, 34px);
+}
+
+@media (min-width: 580px) {
+    #project-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
